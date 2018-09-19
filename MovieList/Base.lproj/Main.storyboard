@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--List View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="ListViewController" id="BYZ-38-t0r" customClass="ListViewController" customModule="MovieList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" preservesSuperviewLayoutMargins="YES" text="" placeholder="Search movie here..." translatesAutoresizingMaskIntoConstraints="NO" id="Wzt-88-uVc">
+                                <rect key="frame" x="0.0" y="20" width="375" height="56"/>
+                                <color key="backgroundColor" red="1" green="0.39607843139999999" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="SDQ-fS-GGz"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="56" id="kJ1-Nd-Z2z"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="PJt-ZJ-xCM"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6Ir-nE-pZW">
+                                <rect key="frame" x="0.0" y="76" width="375" height="591"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="0XG-MG-NGW"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="m2X-u3-iKK"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Wzt-88-uVc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="7lr-90-QyC"/>
+                            <constraint firstItem="Wzt-88-uVc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="K6v-PS-crm"/>
+                            <constraint firstAttribute="trailing" secondItem="Wzt-88-uVc" secondAttribute="trailing" id="LD8-Oq-W61"/>
+                            <constraint firstItem="6Ir-nE-pZW" firstAttribute="top" secondItem="Wzt-88-uVc" secondAttribute="bottom" id="Wm7-32-xxC"/>
+                            <constraint firstAttribute="trailing" secondItem="6Ir-nE-pZW" secondAttribute="trailing" id="axD-aQ-iZJ"/>
+                            <constraint firstItem="6Ir-nE-pZW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gVd-Vn-v9i"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="6Ir-nE-pZW" secondAttribute="bottom" id="rFA-6v-sow"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="zTc-OC-QNg"/>
+                    <connections>
+                        <outlet property="searchBar" destination="Wzt-88-uVc" id="Mmt-wv-nYh"/>
+                        <outlet property="tableView" destination="6Ir-nE-pZW" id="7mM-DI-PMA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1079.2" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+</document>
